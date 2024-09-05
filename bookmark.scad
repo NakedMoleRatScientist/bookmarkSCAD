@@ -6,7 +6,7 @@ m_2 = m * 2;
 spacing = 3;
 width = 20;
 height = 1;
-spacer_w = 5;
+spacer_w = 4;
 text = "Here";
 
 
@@ -49,7 +49,7 @@ module bookmark()
         }
         translate([spacing,spacing,-m])
         {
-            cube([width - (spacing * 2),spacer_w,height + m_2 ]);
+            cube([width - (spacing * 2),spacer_w,height + m_2]);
         }
     }
 }
