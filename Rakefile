@@ -10,13 +10,16 @@ directory_name = manifest[:project_name] + "-" + manifest[:version]
 task :create do
      project_dir = Dir.getwd()
      zip = (directory_name + ".zip")
-     list = ["bookmark.scad"]
+     items = ["bookmark.scad"]
+
      Zip::File.open(zip, create: true) do |zipfile|
-        list.each do |filename|
-        zipfile.add(filename, File.join(project_dir, filename))
+        items.each do |filename|
+            zipfile.add(filename, File.join(project_dir, filename))
+        end
      end
-  end
 end
+
+
 
 task :remove do
     FileUtils.rm_r(directory_name + ".zip")
